@@ -1,0 +1,18 @@
+.image {
+    width: 9em
+}
+.music {
+    display: flex; 
+    flex-direction: column-row; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.musicContainer > h6 {
+    font-weight: 400; 
+    font-family: Arial, Helvetica; 
+}
+.musicContainer {
+    border: solid 1px grey;
+    padding: 4px
+}

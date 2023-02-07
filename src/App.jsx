@@ -1,6 +1,6 @@
 import React, {useEffect} from "react"
 import { Container, InputGroup, FormControl, Button, Row, Col, Card } from "react-bootstrap"
-
+import './App.css'
 
 
 const App = () => {
@@ -10,7 +10,8 @@ const App = () => {
 
   const [accessToken, setAccessToken] = React.useState('')
   const [searchInput, setSearchInput] = React.useState('')
-  const [album, setAlbum] = React.useState([])
+  const [album, setAlbum] = React.useState([]) 
+  console.log(album)
 
  useEffect(() => {
   var authParameters = {
@@ -67,7 +68,19 @@ const App = () => {
    
    <br/> 
    <br/>
-    
+    <div className="music">
+     {album.map((item) => {
+      return (
+        <a key={item.id} href={item.external_urls.spotify} style={{margin: 12,cursor: 'pointer', textDecoration: 'none'}}> 
+        <img src={item.images[1].url} className="image"/> 
+        <div className="musicContainer"> 
+        <h6>{item.name.slice(0, 15)}</h6> 
+         <h6>{item.release_date}</h6>
+        </div>
+        </a>
+      )
+     })}
+    </div>
     
     </Container>
   )
