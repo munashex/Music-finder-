@@ -67,23 +67,8 @@ const App = () => {
    
    <br/> 
    <br/>
-    <Container> 
-      <Row className="mx-2 row row-cols-2">
-         {
-          album.map((item, i) => {
-            return (
-              <Card>
-                 <Card.Img src={item.images[0].url}/> 
-                 <Card.Body>
-                  <Card.Title>{item.name.slice(0, 17)}..</Card.Title>
-                 </Card.Body>
-              </Card>
     
-            )
-          })
-         }
-      </Row>
-    </Container>
+    
     </Container>
   )
 }
